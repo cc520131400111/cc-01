@@ -1,0 +1,18 @@
+https://:3413 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://playartifact.com https://steamcdn-a.akamaihd.net https://steamstore-a.akamaihd.net https://steamcommunity-a.akamaihd.net https://steampipe.akamaized.net https://origin-a.akamaihd.net https://blzddist1-a.akamaihd.net https://blzddistkr1-a.akamaihd.net https://eaassets-a.akamaihd.net https://humblebundle-a.akamaihd.net https://store.steampowered.com {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host steamcommunity.com
+    #header_downstream Host steamcommunity.com
+    #insecure_skip_verify
+    }
+}
+
+#http://:{8port0} {
+#redir / https://{host}{uri} 302
+#}
